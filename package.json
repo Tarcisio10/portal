@@ -1,0 +1,19 @@
+{
+  "name": "portal_noticias",
+  "version": "1.0.0",
+  "description": "Site de noticias",
+  "main": "noticias.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tarcisio10/portal.git"
+  },
+  "author": "Tarcisio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tarcisio10/portal/issues"
+  },
+  "homepage": "https://github.com/Tarcisio10/portal#readme"
+}
