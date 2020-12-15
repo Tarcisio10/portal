@@ -6,6 +6,7 @@ var server = http.createServer(function (req, res) {
 
     var categoria = req.url;
     if (categoria == '/tecnologia') {
+        //res.end Trabalhando com node
         res.end("<html><body>Tech</body></html>");
     } else if (categoria == '/moda') {
         res.end("<html><body>Moda</body></html>");
