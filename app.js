@@ -6,13 +6,15 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(req,res){
     //res.send Trabalhando com express
-    res.send("<html><body>Portal de noticias</body></html>");
+    //res.render Ejs junto com express permigindo código .js
+    res.render("secao/home");
 });
-app.get('/moda', function(req,res){
-    res.send("<html><body>Moda</body></html>");
+app.get('/noticia', function(req,res){
+    res.render('secao/noticia')
+    //res.send("<html><body>Moda</body></html>"); 
 });
 app.get('/tech', function(req,res){
-    res.send("<html><body>Tecnologia</body></html>");
+    res.render("secao/tech");
 });
 
 app.listen(3000, function(){
