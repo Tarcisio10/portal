@@ -1,21 +1,14 @@
 'use strict'
 var app = require('./config/server'); // ... = require('./') Parte do mesmo nivel do diretório
 
-app.get('/', function (req, res) {
-    //res.send Trabalhando com express
-    //res.render Ejs junto com express pertindoindo código .js
-    res.render("home/index");
-});
-app.get('/noticia', function (req, res) {
-    res.render("noticias/noticia");
-    //res.send("<html><body>Moda</body></html>"); 
-});
-app.get('/admin', function (req, res) {
-    res.render("admin/form_add_noticia");
-});
-app.get('/tech', function (req, res) {
-    res.render("secao/tech");
-});
+var rotaNoticia = require('./app/routes/noticia');
+rotaNoticia (app);
+
+var rotaHome = require ('./app/routes/home')(app);
+var rotaForm = require ('./app/routes/form_add_noticia')(app);
+var rotaAdmin = require ('./app/routes/admin')(app);
+var rotaNoticia = require ('./app/routes/noticia')(app);
+var rotaTech = require ('./app/routes/tech')(app);
 
 app.listen(3000, function () {
     console.log("Servidor On")
