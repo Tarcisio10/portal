@@ -7,7 +7,7 @@ var rotaAdmin = require('./app/routes/admin')(app);
 var rotaNoticias = require('./app/routes/noticias')(app);
 var rotaTech = require('./app/routes/tech')(app);
 
-app.listen(3001, function () {
+app.listen(3002, function () {
     console.log("Servidor ON")
 });
 
