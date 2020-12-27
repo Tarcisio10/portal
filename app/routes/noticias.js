@@ -1,13 +1,14 @@
 'use strict'
 //var dbConnection = require('../../config/dbConnection'); removeu o require com uso do consign
-module.exports = function (app) {
+module.exports = function (application) {
 
-    app.get('/noticias', function (req, res) {
+    application.get('/noticias', function (req, res) {
 
-        var connection = app.config.dbConnection();
+        var connection = application.config.dbConnection();
+        var noticiasModel = application.app.models.noticiasModel;//Acessa o model de noticias/models
 
-        connection.query('select * from noticias', function (error, result) {
-            res.render("noticias/noticias", { noticias: result });//passando a view p/ renderizar em Json com código Js
+        noticiasModel.getNoticias(connection, function (error, result) {//'getNoticias'Recupera as noticias,callback com a consulta
+            res.render("noticias/noticias", { noticias: result });
         });
         //res.render("noticias/noticias"); Encapsula o banco de dados e retorna a consulta (result);
         //res.send("<html><body>Moda</body></html>"); 
