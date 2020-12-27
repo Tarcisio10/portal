@@ -1,8 +1,8 @@
 'use strict'
-var dbCOnnection = require('../../config/dbConnection');
+var dbConnection = require('../../config/dbConnection');
 module.exports = function (app) {
 
-    var connection = dbCOnnection();
+    var connection = dbConnection();
 
     app.get('/noticias', function (req, res) {
 
