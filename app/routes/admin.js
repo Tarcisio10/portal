@@ -1,10 +1,16 @@
 'use strict'
-module.exports = function (app) {
-    app.get('/admin', function (req, res) {
+module.exports = function (application) {
+    application.get('/admin', function (req, res) {
         res.render("admin/form_add_noticia");
     });
-    app.post('/noticias/salvar', function (req, res) {
-        var noticias = req.body;
-        res.send(noticias);
+    application.post('/noticias/salvar', function (req, res) {
+        var noticia = req.body;
+
+        var connection = application.config.dbConnection();
+        var noticiasModel = application.app.models.noticiasModel;//Acessa o model de noticias/models
+
+        noticiasModel.salvarNoticia(noticia, connection, function (error, result) {//'getNoticias'Recupera as noticias,callback com a consulta
+            res.redirect("/noticias");
+        });
     });
 };
