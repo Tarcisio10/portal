@@ -7,9 +7,9 @@ module.exports = function (application) {
         var noticia = req.body;
 
         var connection = application.config.dbConnection();
-        var noticiasModel = application.app.models.noticiasModel;//Acessa o model de noticias/models
+        var NoticiasDAO = new application.app.models.NoticiasDAO(connection);//Acessa o model de noticias/models
 
-        noticiasModel.salvarNoticia(noticia, connection, function (error, result) {//'getNoticias'Recupera as noticias,callback com a consulta
+        NoticiasDAO.salvarNoticia(noticia, function (error, result) {//'getNoticias'Recupera as noticias,callback com a consulta
             res.redirect("/noticias");
         });
     });
