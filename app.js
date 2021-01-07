@@ -7,7 +7,7 @@ var app = require('./config/server'); // ... = require('./') Parte do mesmo nive
 //var rotaNoticias = require('./app/routes/noticias')(app);
 //var rotaTech = require('./app/routes/tech')(app);
 
-app.listen(3001, function () {
+app.listen(3000, function () {
     console.log("Servidor ON")
 });
 
